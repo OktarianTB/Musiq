@@ -3,7 +3,20 @@
     <br><br>
     <div class="text-center">
             <h1>{{ song }}</h1>
-            <h4>by {{ artist }}</h4>
+            <h4>by
+                {% for artist in artists %}
+                    <a href="{{ url_for('rhythm.artist', name=artist) }}">
+                    {{ artist }}
+                    </a>
+                    {% if loop.index0 < artists|length - 1 %}
+                        &
+                    {% endif %}
+                {% endfor %}
+            </h4>
+    </div>
+    <br><br>
+    <div class="row justify-content-center">
+        <img src="{{ track_info["image"]["url"] }}" height="250px" width="250px">
     </div>
 
 {% endblock content %}

@@ -6,10 +6,10 @@
 
         <br>
         <div class="text-center">
-            <h1>TOP 25 OF THIS WEEK</h1>
-            <h4>{{ date }}</h4>
+            <h1>TOP 20 OF THIS WEEK</h1>
+            <h5>{{ start_date }} - {{ end_date }}</h5>
         </div>
-        <br><br><br>
+        <br><br>
 
         <div class="row justify-content-center">
             {% for rank in ranking %}
@@ -21,7 +21,9 @@
 
                     <div class="card-body row">
                         <div class="col-lg-10">
-                            <h5 class="card-title"><a href="{{ url_for('rhythm.song', artist=rank[1], title=rank[0]) }}">{{ rank[0] }}</a></h5>
+                            <h5 class="card-title">
+                                <a href="{{ url_for('rhythm.song', artist_name=rank[1], title=rank[0]) }}">{{ rank[0] }}</a>
+                            </h5>
                             <p class="card-text">{{ rank[1] }}</p>
                         </div>
                         <div class="col-2">

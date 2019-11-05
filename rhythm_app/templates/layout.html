@@ -12,7 +12,7 @@
     </style>
 
     {% if title %}
-        <title>{{ title }}</title>
+        <title>{{ title }} - Rhythm</title>
     {% else %}
         <title>Rhythm</title>
     {% endif %}
@@ -29,10 +29,10 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="">Search</a>
+                <a class="nav-link js-scroll-trigger" href="{{ url_for('rhythm.search') }}">Search</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="">Charts</a>
+                <a class="nav-link js-scroll-trigger" href="{{ url_for('rhythm.home') }}">Charts</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="">Statistics</a>
