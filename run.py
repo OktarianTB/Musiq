@@ -1,4 +1,4 @@
-from musiq_app import create_app
+from rhythm_app import create_app
 
 app = create_app()
 

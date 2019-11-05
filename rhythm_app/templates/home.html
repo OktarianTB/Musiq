@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+    <br><br>
+
+    <div>
+
+        <br>
+        <div class="text-center">
+            <h1>TOP 25 OF THIS WEEK</h1>
+            <h4>{{ date }}</h4>
+        </div>
+        <br><br><br>
+
+        <div class="row justify-content-center">
+            {% for rank in ranking %}
+                <div class="card w-75 mt-3">
+
+                    <div class="card-header text-center">
+                        <b>{{ loop.index0 + 1}}</b>
+                    </div>
+
+                    <div class="card-body row">
+                        <div class="col-lg-10">
+                            <h5 class="card-title"><a href="{{ url_for('rhythm.song', artist=rank[1], title=rank[0]) }}">{{ rank[0] }}</a></h5>
+                            <p class="card-text">{{ rank[1] }}</p>
+                        </div>
+                        <div class="col-2">
+                            <img src="{{ track_info[loop.index0]["image"]["url"] }}" height="80px" width="80px" class="pull-right">
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+
+{% endblock content %}
