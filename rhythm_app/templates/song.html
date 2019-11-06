@@ -18,5 +18,13 @@
     <div class="row justify-content-center">
         <img src="{{ track_info["image"]["url"] }}" height="250px" width="250px">
     </div>
+    <br><br><br><br>
+    <div class="text-center">
+            <h1>Statistics</h1>
+    </div><br><br>
+    <div class="row justify-content-center">
+            {{ div|safe }}
+            {{ script|safe }}
+    </div>
 
 {% endblock content %}

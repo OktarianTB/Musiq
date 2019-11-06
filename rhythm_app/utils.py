@@ -2,7 +2,6 @@ from easy_spotify import Spotify
 from rhythm_app.config import Config
 import datetime
 import calendar
-import re
 
 spotify = Spotify(Config.SPOTIFY_ID, Config.SPOTIFY_SECRET)
 
@@ -67,4 +66,25 @@ def get_main_artist(artists):
     return [artists]
 
 
+def search_track(query):
+    tracks_id = spotify.get_track_id(query, limit=10)
+    tracks_info = spotify.get_multiple_tracks_info(tracks_id)
+    return tracks_info, tracks_id
 
+
+def get_related_artists(artist_id):
+    data = spotify.get_related_artists(artist_id)
+    result = []
+    for artist in data[:4]:
+        image = get_artist_info(artist["id"])["image_link"]
+        result.append({"name": artist["name"], "artist_id": artist["id"], "image": image})
+    return result
+
+
+def get_top_tracks(artist_id):
+    data = spotify.get_artist_top_tracks_from_id(artist_id, just_id_and_name=True)
+    result = []
+    for track in data[:5]:
+        info = spotify.get_track_info(track["id"])
+        result.append({"title": track["name"], "image": info["image"]["url"]})
+    return result

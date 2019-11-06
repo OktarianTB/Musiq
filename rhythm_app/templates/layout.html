@@ -11,6 +11,16 @@
         body { background: #f1f2f6 !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
     </style>
 
+    <link
+        href="http://cdn.pydata.org/bokeh/release/bokeh-1.4.0.min.css"
+        rel="stylesheet" type="text/css">
+    <link
+        href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.4.0.min.css"
+        rel="stylesheet" type="text/css">
+
+    <script src="https://cdn.pydata.org/bokeh/release/bokeh-1.4.0.min.js"></script>
+    <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.4.0.min.js"></script>
+
     {% if title %}
         <title>{{ title }} - Rhythm</title>
     {% else %}
@@ -35,9 +45,8 @@
                 <a class="nav-link js-scroll-trigger" href="{{ url_for('rhythm.home') }}">Charts</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="">Statistics</a>
+                <a class="nav-link js-scroll-trigger" href="{{ url_for('rhythm.game') }}">Game</a>
               </li>
-
             </ul>
           </div>
         </div>

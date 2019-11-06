@@ -17,4 +17,35 @@
         <img src="{{ image_link }}" height="250px" width="250px">
     </div>
 
+    <br><br><br><br>
+    <div class="text-center">
+        <h2>Top Tracks</h2>
+    </div>
+    <br><br>
+    <div class="row">
+        {% for track in top_tracks %}
+            <div class="col-sm">
+                <a href="{{ url_for('rhythm.song', artist_name=artist, title=track['title']) }}">
+                <img src="{{ track['image'] }}" height="160px" width="160px">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <br><br><br><br>
+    <div class="text-center">
+        <h2>Related Artists</h2>
+    </div>
+    <br><br>
+    <div class="row">
+        {% for artist in related_artists %}
+            <div class="col-sm">
+                <a href="{{ url_for('rhythm.artist', name=artist['name']) }}">
+                <img src="{{ artist['image'] }}" height="160px" width="160px">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+
 {% endblock content %}

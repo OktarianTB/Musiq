@@ -10,6 +10,32 @@
         </div>
         <br><br><br>
 
+        <div class="row justify-content-center">
+            {% for track in track_info %}
+                <div class="card w-75 mt-3">
+
+                    <div class="card-header text-center">
+                        <b>{{ loop.index0 + 1}}</b>
+                    </div>
+
+                    <div class="card-body row">
+                        <div class="col-lg-10">
+                            <h5 class="card-title">
+                                <a href="{{ url_for('rhythm.song', artist_name=track['name'], title=track['song']) }}">
+                                    {{ track["song"] }}
+                                </a>
+                            </h5>
+                            <p class="card-text">{{ track["name"] }}</p>
+                        </div>
+                        <div class="col-2">
+                            <img src="{{ track["image"]["url"] }}" height="80px" width="80px" class="pull-right">
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+
     </div>
 
 
