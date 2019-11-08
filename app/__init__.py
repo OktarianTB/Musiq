@@ -15,7 +15,7 @@ def create_app(config_class=Config):
     global tracks_info
     tracks_info = get_tracks_info(tracks_id)
 
-    from rhythm_app.routes import rhythm
+    from app.routes import rhythm
     app.register_blueprint(rhythm)
     app.register_error_handler(404, page_not_found)
 

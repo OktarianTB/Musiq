@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for
-from rhythm_app import ranking, tracks_info
+from app import ranking, tracks_info
 from .utils import get_track_id, get_track_info, get_date_week_later, get_artist_id, \
     get_artist_info, get_main_artist, search_track, get_related_artists, get_top_tracks
 from .forms import Search

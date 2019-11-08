@@ -1,5 +1,5 @@
 from easy_spotify import Spotify
-from rhythm_app.config import Config
+from app.config import Config
 import datetime
 import calendar
 
