@@ -84,7 +84,3 @@ def results(query):
     else:
         return render_template("error.html", title=query)
 
-
-@rhythm.route("/game")
-def game():
-    return render_template("game.html", title="Statistics")
